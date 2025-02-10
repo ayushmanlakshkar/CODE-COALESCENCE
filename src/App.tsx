@@ -54,6 +54,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const docsLink ='https://docs.google.com/forms/d/e/1FAIpQLSfy9Jv-g-FT4iwmUKSsX9ZMw3R1HuF95GjBlz5Q9anYCC4sUQ/viewform' 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -102,7 +103,7 @@ function App() {
             {/* <a href="#sponsors" className="hover:text-cyan-400 transition-colors">Sponsors</a> */}
             <a href="#faq" className="hover:text-cyan-400 transition-colors">FAQ</a>
           </div>
-          <a href='https://docs.google.com/forms/d/e/1FAIpQLSfy9Jv-g-FT4iwmUKSsX9ZMw3R1HuF95GjBlz5Q9anYCC4sUQ/viewform' 
+          <a href={docsLink}
           className="hidden sm:flex bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105">
             Register Now
           </a>
@@ -133,10 +134,11 @@ function App() {
           MITS DU presents its FIRST-EVER official hackathon
           </p>
           <div className="flex sm:hidden gap-4 justify-center">
-            <button className="group bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-4 rounded-xl font-semibold transition-all transform hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] relative">
+          <a href={docsLink}
+             className="group bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-4 rounded-xl font-semibold transition-all transform hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] relative">
               <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
               Register Now
-            </button>
+            </a>
             {/* <button className="px-8 py-4 rounded-xl font-semibold text-lg border border-cyan-500/30 hover:bg-cyan-500/10 transition-all">
               Learn More
             </button> */}
