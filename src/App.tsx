@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import logo from './assets/mits.png'
+import logo from './assets/logo2.png'
 import HeroSection from './components/HeroSection';
 import { StatsSection } from './components/StatsSection';
 import { AboutSection } from './components/AboutSection';
-// import TracksSection from './components/TracksSection';
+import TracksSection from './components/TracksSection';
 // import SponsorSection from './components/SponsorSection';
 import FaqSection from './components/FaqSection';
 // import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import { TimelineSection } from './components/TimelineSection';
 import Navbar from './components/Navbar';
-
+import background from './assets/background.png';
+import Guidelines from './components/Guidelines';
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const docsLink = 'https://docs.google.com/forms/d/e/1FAIpQLSfy9Jv-g-FT4iwmUKSsX9ZMw3R1HuF95GjBlz5Q9anYCC4sUQ/viewform'
@@ -47,7 +48,16 @@ function App() {
   ];
 
   return (
-    <div className="bg-black relative text-white pt-24">
+    <div className="bg-[#050303] relative text-white pt-24 min-h-screen max-w-[100vw]">
+      <div className="absolute flex justify-center w-full z-0 mix-blend-lighten max-w-full">
+        <div className="absolute inset-0  bg-gradient-to-b from-surface-dark via-surface-dark/10 to-surface-dark z-10" />
+        <img
+          src={background}
+          alt="Background"
+          className="w-full h-full min-w-[400px] object-cover mix-blend-overlay"
+          />
+      </div>
+      <div className='relative z-10'>
       {/* Navigation */}
       <Navbar scrolled={scrolled} docsLink={docsLink} logo={logo} />
 
@@ -60,22 +70,26 @@ function App() {
       {/* About Section */}
       <AboutSection />
 
+      {/* guidelines */}
+      <Guidelines/>
+
       {/* Timeline Section */}
-      <TimelineSection/>
+      {/* <TimelineSection /> */}
       {/* Tracks Section */}
-     {/* <TracksSection /> */}
+      <TracksSection />
 
       {/* Sponsors Section */}
       {/* <SponsorSection/> */}
 
       {/* FAQ Section */}
-      <FaqSection faqs={faqs}/>
+      <FaqSection faqs={faqs} />
 
       {/* Contact Section */}
       {/* <ContactSection/> */}
 
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
+      </div>
     </div>
   );
 }

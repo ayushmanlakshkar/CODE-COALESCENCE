@@ -6,11 +6,11 @@ function SponsorSection() {
     <div className="max-w-7xl mx-auto px-4">
       <div className="text-center mb-20">
         <h2 className="text-5xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             Our Sponsors
           </span>
         </h2>
-        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+        <p className="text-xl text-content-muted max-w-3xl mx-auto">
           Backed by industry leaders who believe in innovation
         </p>
       </div>

@@ -7,9 +7,9 @@ export const TimelineSection = () => (
         <div className="max-w-7xl mx-auto px-4 relative">
           <div className="text-center flex justify-center">
             <h2 className="text-5xl font-bold mb-6">
-              <span className="flex gap-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
+              <span className="flex gap-4 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                 Timeline
-                <Clock className="w-12 h-12 text-cyan-400 mx-auto" />
+                <Clock className="w-12 h-12 text-primary mx-auto" />
               </span>
             </h2>
           </div>
