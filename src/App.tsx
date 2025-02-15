@@ -7,7 +7,7 @@ import TracksSection from './components/TracksSection';
 // import SponsorSection from './components/SponsorSection';
 import FaqSection from './components/FaqSection';
 // import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import { TimelineSection } from './components/TimelineSection';
 import Navbar from './components/Navbar';
 import background from './assets/background.png';
@@ -70,13 +70,15 @@ function App() {
       {/* About Section */}
       <AboutSection />
 
+      {/* Tracks Section */}
+      <TracksSection />
+      
       {/* guidelines */}
       <Guidelines/>
 
       {/* Timeline Section */}
-      {/* <TimelineSection /> */}
-      {/* Tracks Section */}
-      <TracksSection />
+      <TimelineSection />
+      
 
       {/* Sponsors Section */}
       {/* <SponsorSection/> */}

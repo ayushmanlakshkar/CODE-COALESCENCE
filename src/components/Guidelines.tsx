@@ -1,14 +1,39 @@
 import { CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 export default function HackathonGuidelines() {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({ threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView, controls]);
+
   return (
-    <section className="relative bg-gradient-to-b from-surface-dark via-black to-surface-dark text-white py-16 px-6 lg:px-24">
+    <section
+      ref={ref}
+      id="guidelines"
+      className="relative bg-gradient-to-b from-surface-dark via-black to-surface-dark text-white py-16 pt-32 px-6 lg:px-24"
+    >
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-surface-dark/60 backdrop-blur-md z-0 rounded-xl" />
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
+      <motion.div
+        className="relative z-10 max-w-4xl mx-auto text-center"
+        initial="hidden"
+        animate={controls}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+        }}
+      >
         <div className="flex gap-3 text-5xl font-bold text-center justify-center items-center mb-5">
           🚀
           <span className="flex gap-4 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
@@ -25,23 +50,26 @@ export default function HackathonGuidelines() {
             <GuidelineCard key={index} guideline={guideline} index={index} />
           ))}
         </ul>
-      </div>
+      </motion.div>
     </section>
   );
 }
 
-// Guideline Card (Always Expanded)
+// Guideline Card (Repeats Every Time on Scroll)
 interface Guideline {
   point: string;
   subPoints: string[];
 }
 
 function GuidelineCard({ guideline, index }: { guideline: Guideline; index: number }) {
+  const { ref, inView } = useInView({ threshold: 0.2 });
+
   return (
     <motion.li
+      ref={ref}
       key={index}
       initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
+      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
       transition={{ delay: index * 0.2, duration: 0.5 }}
       className="p-4 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 shadow-lg"
     >
@@ -50,11 +78,11 @@ function GuidelineCard({ guideline, index }: { guideline: Guideline; index: numb
         <span className="text-gray-300 font-semibold">{guideline.point}</span>
       </div>
 
-      {/* Subpoints are always visible */}
+      {/* Subpoints Animation */}
       {guideline.subPoints.length > 0 && (
         <motion.ul
           initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="mt-2 ml-10 space-y-2 text-gray-400 list-disc md:ml-10"
         >

@@ -28,6 +28,9 @@ export default {
           muted: '#a39999',   // muted text
           subtle: '#665e5e',  // subtle text
         }
+      },
+      screens:{
+        "nav":"950px"
       }
     },
   },
