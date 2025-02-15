@@ -13,6 +13,22 @@ function Navbar({
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Smooth scroll with offset
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const target = document.querySelector(id);
+    if (target) {
+      console.log(target);
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      if(window.innerWidth < 768) {
+        setTimeout(() => {
+          window.scrollBy({ top: -45, behavior: "smooth" });
+        }, 800);
+      }
+    }
+    setMenuOpen(false); // Close menu on mobile
+  };
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -28,18 +44,23 @@ function Navbar({
 
         {/* Desktop Menu */}
         <div className="hidden nav:flex items-center gap-8">
-          <a href="#about" className="hover:text-primary transition-colors">About</a>
-          <a href="#timeline" className="hover:text-primary transition-colors">Timeline</a>
-          <a href="#tracks" className="hover:text-primary transition-colors">Tracks</a>
-          <a href="#guidelines" className="hover:text-primary transition-colors">Guidelines</a>
-          <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
+          {["about", "timeline", "tracks", "guidelines", "faq"].map((item) => (
+            <a
+              key={item}
+              href={`#${item}`}
+              onClick={(e) => handleSmoothScroll(e, `#${item}`)}
+              className="hover:text-primary transition-colors"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </a>
+          ))}
         </div>
 
         {/* Register Button */}
         <a
           href={docsLink}
           target="_blank"
-            rel="noopener noreferrer"
+          rel="noopener noreferrer"
           className="hidden nav:flex bg-gradient-to-r from-primary to-secondary hover:from-primary-light hover:to-secondary-light px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105"
         >
           Register Now
@@ -64,14 +85,19 @@ function Navbar({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="nav:hidden absolute top-[100%] left-0 w-full bg-surface-dark/90 backdrop-blur-md shadow-lg p-6 flex flex-col items-center gap-4"
           >
-            <a href="#about" className="hover:text-primary transition-colors">About</a>
-            <a href="#timeline" className="hover:text-primary transition-colors">Timeline</a>
-            <a href="#tracks" className="hover:text-primary transition-colors">Tracks</a>
-            <a href="#guidelines" className="hover:text-primary transition-colors">Guidelines</a>
-            <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
+            {["about", "timeline", "tracks", "guidelines", "faq"].map((item) => (
+              <a
+                key={item}
+                href={`#${item}`}
+                onClick={(e) => handleSmoothScroll(e, `#${item}`)}
+                className="hover:text-primary transition-colors"
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </a>
+            ))}
             <a
-            target="_blank"
-            rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               href={docsLink}
               className="bg-gradient-to-r from-primary to-secondary hover:from-primary-light hover:to-secondary-light px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105"
             >

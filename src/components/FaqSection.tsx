@@ -19,7 +19,7 @@ function FaqSection({ faqs }: FaqSectionProps) {
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
                         <span className="flex gap-4 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                             FAQ
-                            <HelpCircle className="w-12 h-12 text-primary mb-6" />
+                            <HelpCircle className="w-9 h-9 md:w-12 md:h-12 text-primary" />
                         </span>
                     </h2>
                 </div>
