@@ -26,25 +26,75 @@ function App() {
 
   const faqs = [
     {
+      question: "What is Code Coalescence?",
+      answer:
+        "A 12-hour hackathon promoting innovation, problem-solving, and teamwork.",
+    },
+    {
+      question: "When and where is the hackathon?",
+      answer: "February 28, 2025, from 8:00 AM to 8:00 PM at MITS-DU Gwalior.",
+    },
+    {
       question: "Who can participate?",
-      answer: "Anyone over 18 years old with a passion for technology and innovation can participate. Whether you're a student, professional, or self-taught developer, you're welcome to join!"
+      answer:
+        "All MITS-DU students passionate about coding and problem-solving.",
     },
     {
-      question: "What should I bring?",
-      answer: "Bring your laptop, charger, and any hardware you might need for your project. We'll provide high-speed internet, power strips, meals, drinks, and a comfortable hacking space."
+      question: "Is there a registration fee?",
+      answer: "No, participation is free.",
     },
     {
-      question: "How do teams work?",
-      answer: "Teams can have up to 4 members. Don't have a team? No worries! We'll host team formation events before the hackathon, and you can also find teammates during our opening ceremony."
+      question: "What is the format?",
+      answer:
+        "Team-based event solving real-world problems and presenting to judges.",
     },
     {
-      question: "Is it free?",
-      answer: "Yes! Thanks to our generous sponsors, the event is completely free for all participants. We'll provide meals, snacks, swag, and access to all workshops and mentorship sessions."
+      question: "How many members per team?",
+      answer:
+        "Each team must have 6 members, including at least one female member.",
     },
     {
-      question: "What kind of support is provided?",
-      answer: "We provide technical mentorship, workshops, API credits from our sponsors, hardware for testing, and dedicated spaces for brainstorming and collaboration."
-    }
+      question: "Are there prizes?",
+      answer: "Yes, winners receive certificates, trophies, and cash prizes.",
+    },
+    {
+      question: "Do we need to bring our own devices?",
+      answer:
+        "Yes, bring at least 2 laptops per team along with necessary accessories.",
+    },
+    {
+      question: "Will food be provided?",
+      answer: "Yes, lunch and snacks will be available.",
+    },
+    {
+      question: "Can teams have fewer than 6 members?",
+      answer: "No, at least 6 members, including one female, are required.",
+    },
+    {
+      question: "Can we register our own problem statement?",
+      answer: "Yes, if it aligns with the college's theme.",
+    },
+    {
+      question: "Are students from other institutes allowed?",
+      answer: "No, only MITS-DU students with valid ID cards can participate.",
+    },
+    {
+      question: "Can we modify the provided SIH PPT?",
+      answer: "It is a guideline; teams must create their own presentation.",
+    },
+    {
+      question: "Will fresh problem statements be provided?",
+      answer: "No, teams must determine their problem statements beforehand.",
+    },
+    {
+      question: "Will we receive certificates?",
+      answer:
+        "Top 10 teams get hard copies, e-certificates for shortlisted teams only.",
+    },
+    {
+      question: "Are pre-built codes allowed?",
+      answer: "No, coding must be done live in front of mentors.",
+    },
   ];
 
   return (

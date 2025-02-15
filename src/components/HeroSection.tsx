@@ -35,7 +35,7 @@ function HeroSection({ docsLink }: HeroSectionProps) {
                         4000, // Pause for 2 seconds
                         "Join us for an exhilarating coding experience!",
                         2000, // Pause for 2 seconds
-                        "Get ready for 48 hours of innovation and creativity!",
+                        "Get ready for 12 hours of innovation and creativity!",
                         2000 // Pause for 2 seconds
                     ]}
                     wrapper="p"
