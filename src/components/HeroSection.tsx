@@ -1,6 +1,4 @@
-import React from 'react'
 import logo from '../assets/logo2.png'
-import background from '../assets/background.png'
 interface HeroSectionProps {
     docsLink: string;
 }

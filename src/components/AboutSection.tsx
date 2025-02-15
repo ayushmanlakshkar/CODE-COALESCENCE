@@ -49,7 +49,7 @@ export const AboutSection = () => {
     //       </div>
     //     </div>
     //   </section>
-      <section id="about" className="py-32 pt-40 relative">
+      <section id="about" className="pt-40 relative">
               <div className="absolute inset-0" />
               <div className="max-w-7xl mx-auto px-4 relative">
                 <div className="text-center mb-20">
@@ -66,7 +66,7 @@ export const AboutSection = () => {
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">
                   {features.map((feature, index) => (
-                    <div key={index} className="group bg-gradient-to-br from-primary/5 to-secondary/5 p-8 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all">
+                    <div key={index} className="group bg-gradient-to-br from-primary/10 to-secondary/5 p-8 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all">
                       <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-4 rounded-xl w-fit mb-6 group-hover:scale-110 transition-transform">
                         <feature.icon className="w-8 h-8 text-primary" />
                       </div>

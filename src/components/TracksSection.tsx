@@ -45,7 +45,7 @@ function TracksSection() {
   ];
   
   return (
-    <section id="tracks" className="pt-32 relative">
+    <section id="tracks" className="pt-32 pb-10 relative">
     <div className="max-w-7xl mx-auto px-4">
       <div className="text-center mb-20">
         <h2 className="text-5xl font-bold mb-6">
@@ -60,8 +60,7 @@ function TracksSection() {
       <div className="flex flex-wrap gap-8 justify-center">
         {tracks.map((track, index) => (
           <div key={index} className="group relative w-96 flex">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-lg opacity-0 group-hover:opacity-20 transition-opacity" />
-            <div className="relative bg-gradient-to-br from-surface-light to-surface-dark p-8 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all">
+            <div className="relative bg-gradient-to-br from-surface-light/100 to-surface-dark/80 p-8 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all transform hover:scale-105">
               <track.icon className="w-10 h-10 text-primary mb-6" />
               <h3 className="text-2xl font-semibold mb-4">{track.title}</h3>
               <p className="text-content-muted">{track.description}</p>
