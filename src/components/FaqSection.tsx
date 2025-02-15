@@ -13,9 +13,9 @@ interface FaqSectionProps {
 
 function FaqSection({ faqs }: FaqSectionProps) {
     return (
-        <section id="faq" className="pt-10 md:pt-32 relative bg-transparent">
+        <section id="faq" className="pt-10 md:pt-32 pb-10 relative bg-transparent">
             <div className="max-w-4xl mx-auto px-4">
-                <div className="text-center mb-20 flex justify-center">
+                <div className="text-center flex justify-center">
                     <h2 className="text-5xl font-bold mb-6">
                         <span className="flex gap-4 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                             FAQ
