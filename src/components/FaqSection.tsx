@@ -28,7 +28,7 @@ function FaqSection({ faqs }: FaqSectionProps) {
   };
 
   return (
-    <section id="faq" className="pt-16 md:pt-32 pb-10 relative bg-transparent">
+    <section id="FAQ" className="pt-16 md:pt-32 pb-10 relative bg-transparent">
       <div className="max-w-4xl mx-auto px-4">
         {/* Heading with animation */}
         <div className="text-center flex justify-center">
