@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 function HeroSection({ docsLink }: HeroSectionProps) {
     return (
-        <header className="relative flex items-center justify-center overflow-hidden pt-20">
+        <header className="relative flex items-center justify-center overflow-hidden pt-10">
             {/* <div className="absolute flex justify-center inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-b from-surface-dark via-surface-dark/20 to-surface-dark z-10" />
                 <img
@@ -31,17 +31,17 @@ function HeroSection({ docsLink }: HeroSectionProps) {
                 {/* Typing Animation for Subtitle */}
                 <TypeAnimation
                     sequence={[
-                        "MITS DU presents its FIRST-EVER official hackathon",
-                        4000, // Pause for 2 seconds
-                        "Join us for an exhilarating coding experience!",
-                        2000, // Pause for 2 seconds
-                        "Get ready for 12 hours of innovation and creativity!",
-                        2000 // Pause for 2 seconds
-                    ]}
+                        "🚀 MITS DU presents its FIRST-EVER official hackathon 🎉",
+                        3000, // Pause for 2 seconds
+                        "💻 Join us for an exhilarating coding experience! 🤩",
+                        3000, // Pause for 2 seconds
+                        "⏳ Get ready for 12 hours of innovation and creativity! 🌟",
+                        3000 // Pause for 2 seconds
+                    ]}                    
                     wrapper="p"
                     speed={50}
                     repeat={Infinity}
-                    className="text-lg md:text-2xl text-content-muted mb-12 max-w-2xl mx-auto"
+                    className="text-lg md:text-2xl text-content mb-12 max-w-2xl mx-auto"
                 />
 
                 <div className="flex sm:hidden gap-4 justify-center">

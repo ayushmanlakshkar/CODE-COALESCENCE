@@ -1,10 +1,22 @@
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import React, { useState } from 'react'
+import { useInView } from 'react-intersection-observer';
+import { motion } from "framer-motion";
 
-const FaqItem = ({ question, answer }: { question: string; answer: string }) => {
+const FaqItem = ({ question, answer, index }: { question: string; answer: string, index:number }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+  });
 
   return (
+    <motion.div
+                key={index}
+                ref={ref}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+              >
     <div className="bg-gradient-to-br from-surface-light to-surface-dark rounded-2xl border border-primary/10 overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -22,10 +34,11 @@ const FaqItem = ({ question, answer }: { question: string; answer: string }) => 
           }`}
       >
         <div className="overflow-hidden">
-          <p className="p-8 pt-0 text-content-muted">{answer}</p>
+          <p className="md:text-lg p-8 pt-0 text-content-muted">{answer}</p>
         </div>
       </div>
     </div>
+              </motion.div>
   );
 };
 
