@@ -43,8 +43,8 @@ function Navbar({
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden nav:flex items-center gap-8">
-          {["about", "timeline", "tracks", "guidelines", "faq"].map((item) => (
+        <div className="hidden nav:flex items-center gap-8 font-bold">
+          {["about", "timeline", "tracks", "guidelines", "FAQ"].map((item) => (
             <a
               key={item}
               href={`#${item}`}
@@ -83,7 +83,7 @@ function Navbar({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="nav:hidden absolute top-[100%] left-0 w-full bg-surface-dark/90 backdrop-blur-md shadow-lg p-6 flex flex-col items-center gap-4"
+            className="nav:hidden font-bold absolute top-[100%] left-0 w-full bg-surface-dark/90 backdrop-blur-md shadow-lg p-6 flex flex-col items-center gap-4"
           >
             {["about", "timeline", "tracks", "guidelines", "faq"].map((item) => (
               <a

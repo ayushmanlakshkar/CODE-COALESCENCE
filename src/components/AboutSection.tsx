@@ -12,77 +12,80 @@ export const AboutSection = () => {
     <section id="about" className="pt-12 md:pt-40 relative">
       <div className="absolute inset-0" />
       <div className="max-w-7xl mx-auto px-4 relative">
-        {/* Animated Heading */}
+        {/* Title */}
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
               The Future of Innovation
             </span>
           </h2>
-
-          {/* Animated Subtext */}
-          <motion.p
-            className="text-lg md:text-xl text-content-muted max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <span className="block font-semibold text-white">
-              A high-energy, 12-hour coding marathon where{" "}
-              <motion.span
-                className="text-primary"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ repeat: Infinity, duration: 1.2 }}
-              >
-                ideas meet execution
-              </motion.span>
-              , creativity fuels innovation, and{" "}
-              <motion.span
-                className="text-primary"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ repeat: Infinity, duration: 1.2 }}
-              >
-                YOU get a chance to build something extraordinary!
-              </motion.span>{" "}
-              💡💻
+          <p className="text-lg md:text-xl text-content-muted max-w-3xl mx-auto">
+            <span className="font-bold text-white">A high-energy, 12-hour coding marathon {" "}</span>
+            where ideas meet execution, creativity fuels innovation, and
+            YOU get a chance to build something extraordinary! 💡💻
+            <br />
+            <br />
+            <span className="font-bold text-2xl text-accent">
+            Then this is YOUR moment! 🌟
             </span>
-            <motion.span
-              className="mt-4 block font-bold text-2xl text-accent"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Then this is YOUR moment! 🌟
-            </motion.span>
-          </motion.p>
+          </p>
         </motion.div>
 
-        {/* Feature Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Features Grid */}
+        <motion.div
+          className="grid md:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.3, duration: 0.7 } },
+          }}
+        >
           {features.map((feature, index) => (
             <motion.div
               key={index}
               className="group bg-gradient-to-br from-primary/10 to-secondary/5 p-8 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: index * 0.2 }}
             >
-              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-4 rounded-xl w-fit mb-6 group-hover:scale-110 transition-transform">
+              {/* Icon */}
+              <motion.div
+                className="bg-gradient-to-br from-primary/10 to-secondary/10 p-4 rounded-xl w-fit mb-6 group-hover:scale-110 transition-transform"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
                 <feature.icon className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-lg md:text-2xl font-semibold mb-4">{feature.title}</h3>
-              <p className="text-content-muted">{feature.description}</p>
+              </motion.div>
+
+              {/* Title */}
+              <motion.h3
+                className="text-lg md:text-2xl font-semibold mb-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                {feature.title}
+              </motion.h3>
+
+              {/* Description */}
+              <motion.p
+                className="text-content-muted"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                {feature.description}
+              </motion.p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
