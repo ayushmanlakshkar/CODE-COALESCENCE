@@ -32,7 +32,7 @@ function Navbar({
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-surface-dark/80 backdrop-blur-md py-4" : "bg-transparent py-6"
+        scrolled ? "bg-surface-dark/80 backdrop-blur-md py-1" : "bg-transparent py-4"
       }`}
     >
       <div className="max-w-[100vw] mx-auto px-4 flex items-center justify-between">
