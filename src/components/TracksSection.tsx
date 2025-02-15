@@ -47,7 +47,7 @@ function TracksSection() {
   const problemStatements = "https://web.mitsgwalior.in/images/2025/feb/Problem%20Statements-CC-2025.pdf";
 
   return (
-    <section id="tracks" className="pt-32 pb-10 relative">
+    <section id="tracks" className="pt-10 md:pt-32 relative">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-20">
           <h2 className="text-5xl font-bold mb-6">

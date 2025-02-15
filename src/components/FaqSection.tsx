@@ -13,7 +13,7 @@ interface FaqSectionProps {
 
 function FaqSection({ faqs }: FaqSectionProps) {
     return (
-        <section id="faq" className="py-32 relative bg-transparent">
+        <section id="faq" className="pt-10 md:pt-32 relative bg-transparent">
             <div className="max-w-4xl mx-auto px-4">
                 <div className="text-center mb-20 flex justify-center">
                     <h2 className="text-5xl font-bold mb-6">

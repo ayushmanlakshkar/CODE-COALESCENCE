@@ -49,7 +49,7 @@ export const AboutSection = () => {
     //       </div>
     //     </div>
     //   </section>
-      <section id="about" className="pt-40 relative">
+      <section id="about" className="pt-12 md:pt-40 relative">
               <div className="absolute inset-0" />
               <div className="max-w-7xl mx-auto px-4 relative">
                 <div className="text-center mb-20">

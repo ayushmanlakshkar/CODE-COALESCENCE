@@ -7,7 +7,7 @@ export const StatsSection = () => {
         { number: '12hrs', label: 'of Hacking', icon: Clock },
     ];
     return (
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative pt-10 md:pt-32 overflow-hidden">
             <div className="absolute inset-0 bg-transparent" />
             <div className="max-w-7xl mx-auto px-4">
                 <div className="grid md:grid-cols-3 gap-8 text-center">
