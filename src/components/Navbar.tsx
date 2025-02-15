@@ -21,7 +21,7 @@ function Navbar({
     >
       <div className="max-w-[100vw] mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center">
           <img className="w-16 md:w-20" src={logo} alt="Logo" />
           <span className="font-bold text-lg md:text-xl">CODE COALESCENCE</span>
         </div>
