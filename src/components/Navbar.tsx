@@ -38,6 +38,8 @@ function Navbar({
         {/* Register Button */}
         <a
           href={docsLink}
+          target="_blank"
+            rel="noopener noreferrer"
           className="hidden nav:flex bg-gradient-to-r from-primary to-secondary hover:from-primary-light hover:to-secondary-light px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105"
         >
           Register Now
@@ -68,6 +70,8 @@ function Navbar({
             <a href="#guidelines" className="hover:text-primary transition-colors">Guidelines</a>
             <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
             <a
+            target="_blank"
+            rel="noopener noreferrer"
               href={docsLink}
               className="bg-gradient-to-r from-primary to-secondary hover:from-primary-light hover:to-secondary-light px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105"
             >
