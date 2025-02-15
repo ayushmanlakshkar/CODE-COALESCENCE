@@ -28,74 +28,85 @@ function App() {
     {
       question: "What is Code Coalescence?",
       answer:
-        "A 12-hour hackathon promoting innovation, problem-solving, and teamwork.",
+        "Code Coalescence is an exciting 12-hour hackathon designed to foster innovation, problem-solving, and teamwork among students.",
     },
     {
-      question: "When and where is the hackathon?",
-      answer: "February 28, 2025, from 8:00 AM to 8:00 PM at MITS-DU Gwalior.",
-    },
-    {
-      question: "Who can participate?",
+      question: "When and where will the hackathon take place?",
       answer:
-        "All MITS-DU students passionate about coding and problem-solving.",
+        "The event is scheduled for February 28, 2025, from 8:00 AM to 8:00 PM at MITS-DU Gwalior.",
     },
     {
-      question: "Is there a registration fee?",
-      answer: "No, participation is free.",
-    },
-    {
-      question: "What is the format?",
+      question: "Who can participate in the hackathon?",
       answer:
-        "Team-based event solving real-world problems and presenting to judges.",
+        "All students of MITS-DU with a passion for coding, problem-solving, and teamwork are welcome to participate.",
     },
     {
-      question: "How many members per team?",
+      question: "Is there a registration fee for participation?",
       answer:
-        "Each team must have 6 members, including at least one female member.",
+        "No, the hackathon is completely free to participate in, encouraging accessibility for all students.",
     },
     {
-      question: "Are there prizes?",
-      answer: "Yes, winners receive certificates, trophies, and cash prizes.",
-    },
-    {
-      question: "Do we need to bring our own devices?",
+      question: "What is the format of the event?",
       answer:
-        "Yes, bring at least 2 laptops per team along with necessary accessories.",
+        "The hackathon follows a team-based format where participants work collaboratively to solve real-world problems and present their solutions to a panel of judges.",
     },
     {
-      question: "Will food be provided?",
-      answer: "Yes, lunch and snacks will be available.",
-    },
-    {
-      question: "Can teams have fewer than 6 members?",
-      answer: "No, at least 6 members, including one female, are required.",
-    },
-    {
-      question: "Can we register our own problem statement?",
-      answer: "Yes, if it aligns with the college's theme.",
-    },
-    {
-      question: "Are students from other institutes allowed?",
-      answer: "No, only MITS-DU students with valid ID cards can participate.",
-    },
-    {
-      question: "Can we modify the provided SIH PPT?",
-      answer: "It is a guideline; teams must create their own presentation.",
-    },
-    {
-      question: "Will fresh problem statements be provided?",
-      answer: "No, teams must determine their problem statements beforehand.",
-    },
-    {
-      question: "Will we receive certificates?",
+      question: "How many members can form a team?",
       answer:
-        "Top 10 teams get hard copies, e-certificates for shortlisted teams only.",
+        "Each team must consist of exactly 6 members, including at least one female participant.",
     },
     {
-      question: "Are pre-built codes allowed?",
-      answer: "No, coding must be done live in front of mentors.",
+      question: "What are the prizes for the winners?",
+      answer:
+        "Winning teams will receive certificates, trophies, and exciting cash prizes as recognition for their efforts.",
+    },
+    {
+      question: "Do participants need to bring their own devices?",
+      answer:
+        "Yes, each team should bring at least two laptops along with any necessary accessories required for development.",
+    },
+    {
+      question: "Will food and refreshments be provided?",
+      answer:
+        "Yes, participants will be provided with lunch and snacks to keep their energy levels up throughout the event.",
+    },
+    {
+      question: "Are teams allowed to have fewer than 6 members?",
+      answer:
+        "No, teams must have exactly 6 members, with at least one female participant, to be eligible for participation.",
+    },
+    {
+      question: "Can we propose our own problem statement?",
+      answer:
+        "Yes, teams can propose their own problem statement as long as it aligns with the college's official theme.",
+    },
+    {
+      question: "Are students from other institutes allowed to participate?",
+      answer:
+        "No, participation is limited to MITS-DU students with valid ID cards.",
+    },
+    {
+      question: "Can we modify the SIH PPT provided by the organizers?",
+      answer:
+        "The provided SIH PPT is just a guideline; teams are required to create their own presentations based on their solution.",
+    },
+    {
+      question: "Will new problem statements be given during the event?",
+      answer:
+        "No, teams should identify and finalize their problem statements before the event begins.",
+    },
+    {
+      question: "Will all participants receive certificates?",
+      answer:
+        "The top 10 teams will receive hard-copy certificates, while e-certificates will be provided to all shortlisted teams.",
+    },
+    {
+      question: "Can we use pre-written code during the hackathon?",
+      answer:
+        "No, all coding must be done live in front of mentors to ensure fair competition and originality.",
     },
   ];
+
 
   return (
     <div className="bg-[#050303] relative text-white pt-24 min-h-screen max-w-[100vw]">

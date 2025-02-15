@@ -2,9 +2,9 @@ import { Clock, Trophy, Users } from "lucide-react";
 
 export const StatsSection = () => {
     const stats = [
-        { number: '150+', label: 'Hackers', icon: Users },
-        { number: 'INR 30k', label: 'in Prizes', icon: Trophy },
-        { number: '12hrs', label: 'of Hacking', icon: Clock },
+      { number: "150+", label: "Hackers", icon: Users },
+      { number: "INR 30k", label: "Prize Pool", icon: Trophy },
+      { number: "12hrs", label: "of Hacking", icon: Clock },
     ];
     return (
         <section className="relative pt-16 md:pt-32 overflow-hidden">

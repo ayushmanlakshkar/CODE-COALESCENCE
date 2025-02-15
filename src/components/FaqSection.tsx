@@ -49,7 +49,7 @@ function FaqSection({ faqs }: FaqSectionProps) {
         <div className="flex justify-center mt-6">
           <button
             onClick={handleLoadMore}
-            className="px-6 py-3 flex gap-3 justify-center items-center cursor-pointer text-white font-semibold text-lg 
+            className="px-4 py-3 flex gap-3 justify-center items-center cursor-pointer text-white font-semibold text-lg 
                bg-gradient-to-r from-primary to-secondary rounded-2xl shadow-lg 
                hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
