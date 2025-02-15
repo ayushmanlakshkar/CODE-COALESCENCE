@@ -7,7 +7,7 @@ import {
   } from 'lucide-react';
 function ContactSection() {
   return (
-    <section className="pt-10 md:pt-32 relative">
+    <section className="pt-16 md:pt-32 relative">
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/95 to-black" />
         <div className="max-w-4xl mx-auto px-4 relative">
           <div className="text-center">

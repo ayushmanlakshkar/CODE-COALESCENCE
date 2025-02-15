@@ -19,7 +19,7 @@ export default function HackathonGuidelines() {
     <section
       ref={ref}
       id="guidelines"
-      className="relative bg-gradient-to-b from-surface-dark via-black to-surface-dark text-white pt-10 md:pt-32 px-6 lg:px-24"
+      className="relative bg-gradient-to-b from-surface-dark via-black to-surface-dark text-white pt-16 md:pt-32 px-6 lg:px-24"
     >
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-surface-dark/60 backdrop-blur-md z-0 rounded-xl" />
