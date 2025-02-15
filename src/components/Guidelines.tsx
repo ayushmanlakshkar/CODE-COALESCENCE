@@ -34,18 +34,18 @@ export default function HackathonGuidelines() {
           visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
         }}
       >
-        <div className="flex gap-3 text-5xl font-bold text-center justify-center items-center mb-5">
+        <div className="flex gap-3 text-3xl md:text-5xl font-bold text-center justify-center items-center mb-5">
           🚀
           <span className="flex gap-4 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             Hackathon Guidelines
           </span>
         </div>
-        <p className="text-xl text-content-muted mb-10">
+        <p className="text-lg md:text-xl text-content-muted mb-10">
           Follow these rules to ensure a fair and exciting competition!
         </p>
 
         {/* Guidelines List */}
-        <ul className="text-left text-lg space-y-6">
+        <ul className="text-left md:text-lg space-y-6">
           {guidelines.map((guideline, index) => (
             <GuidelineCard key={index} guideline={guideline} index={index} />
           ))}

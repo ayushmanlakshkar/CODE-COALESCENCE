@@ -50,12 +50,12 @@ function TracksSection() {
     <section id="tracks" className="pt-16 md:pt-32 relative">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
               Innovation Tracks
             </span>
           </h2>
-          <p className="text-xl text-content-muted max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-content-muted max-w-3xl mx-auto">
             Choose your path and make an impact in these cutting-edge domains
           </p>
         </div>
@@ -65,7 +65,7 @@ function TracksSection() {
             <div key={index} className="group relative w-96 flex">
               <div className="relative bg-gradient-to-br from-surface-light/100 to-surface-dark/80 p-8 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all transform hover:scale-105">
                 <track.icon className="w-10 h-10 text-primary mb-6" />
-                <h3 className="text-2xl font-semibold mb-4">{track.title}</h3>
+                <h3 className="text-lg md:text-2xl font-semibold mb-4">{track.title}</h3>
                 <p className="text-content-muted">{track.description}</p>
               </div>
             </div>

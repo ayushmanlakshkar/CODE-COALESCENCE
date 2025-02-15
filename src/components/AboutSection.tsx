@@ -53,12 +53,12 @@ export const AboutSection = () => {
               <div className="absolute inset-0" />
               <div className="max-w-7xl mx-auto px-4 relative">
                 <div className="text-center mb-20">
-                  <h2 className="text-5xl font-bold mb-6">
+                  <h2 className=" text-3xl md:text-5xl font-bold mb-6">
                     <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                       The Future of Innovation
                     </span>
                   </h2>
-                  <p className="text-xl text-content-muted max-w-3xl mx-auto">
+                  <p className="text-lg md:text-xl text-content-muted max-w-3xl mx-auto">
                   A high-energy, 12-hour coding marathon where ideas meet execution, creativity fuels innovation, and YOU get a chance to build something extraordinary! 💡💻
       Then this is YOUR moment! 🌟
       
@@ -70,7 +70,7 @@ export const AboutSection = () => {
                       <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-4 rounded-xl w-fit mb-6 group-hover:scale-110 transition-transform">
                         <feature.icon className="w-8 h-8 text-primary" />
                       </div>
-                      <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
+                      <h3 className="text-lg md:text-2xl font-semibold mb-4">{feature.title}</h3>
                       <p className="text-content-muted">{feature.description}</p>
                     </div>
                   ))}
