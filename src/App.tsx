@@ -71,7 +71,7 @@ function App() {
         <img
           src={background}
           alt="Background"
-          className="w-full h-full min-w-[400px] object-cover mix-blend-overlay"
+          className="w-full h-full min-w-[350px] object-cover mix-blend-overlay"
           />
       </div>
       <div className='relative z-10'>
