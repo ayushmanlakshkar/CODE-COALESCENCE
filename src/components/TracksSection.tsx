@@ -45,8 +45,7 @@ function TracksSection() {
     }
   ];
 
-  const problemStatements = "https://web.mitsgwalior.in/images/2025/feb/Problem%20Statements-CC-2025.pdf";
-
+  const problemStatements = import.meta.env.VITE_PROBLEM_STATEMENTS as string;
   return (
     <section id="tracks" className="pt-16 md:pt-32 relative">
       <div className="max-w-7xl mx-auto px-4">

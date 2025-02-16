@@ -12,9 +12,10 @@ import { TimelineSection } from './components/TimelineSection';
 import Navbar from './components/Navbar';
 import background from './assets/background.png';
 import Guidelines from './components/Guidelines';
+const docsLink = import.meta.env.VITE_DOCS_LINK
+
 function App() {
   const [scrolled, setScrolled] = useState(false);
-  const docsLink = 'https://docs.google.com/forms/d/e/1FAIpQLSfy9Jv-g-FT4iwmUKSsX9ZMw3R1HuF95GjBlz5Q9anYCC4sUQ/viewform'
 
   useEffect(() => {
     const handleScroll = () => {
