@@ -1,8 +1,7 @@
-import { HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
+import { HelpCircle } from "lucide-react";
 import React, { useState } from "react";
 import FaqItem from "./FaqItem";
 import { motion } from "framer-motion";
-import { useInView } from 'react-intersection-observer';
 
 interface Faq {
   question: string;

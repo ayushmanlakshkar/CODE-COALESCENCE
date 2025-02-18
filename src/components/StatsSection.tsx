@@ -1,6 +1,5 @@
 import { Clock, Trophy, Users } from "lucide-react";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 export const StatsSection = () => {
     const stats = [
@@ -8,24 +7,6 @@ export const StatsSection = () => {
       { number: "INR 30k", label: "Prize Pool", icon: Trophy },
       { number: "12hrs", label: "of Hacking", icon: Clock },
     ];
-
-    const [inView, setInView] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const section = document.getElementById('stats-section');
-            const rect = section?.getBoundingClientRect();
-            if (rect && rect.top < window.innerHeight) {
-                setInView(true);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
 
     return (
         <section
@@ -39,10 +20,7 @@ export const StatsSection = () => {
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
-                            animate={{
-                                opacity: inView ? 1 : 0,
-                                y: inView ? 0 : 20,
-                            }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: index * 0.2 }}
                             className="bg-gradient-to-br from-surface-dark/50 to-surface-dark/20 backdrop-blur-xl p-8 rounded-2xl border border-content/20 transform hover:scale-105 transition-all"
                         >
@@ -50,7 +28,7 @@ export const StatsSection = () => {
                             <motion.div
                                 className="text-3xl sm:text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text"
                                 initial={{ opacity: 0 }}
-                                animate={{ opacity: inView ? 1 : 0 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.7 }}
                             >
                                 {stat.number}

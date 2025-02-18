@@ -1,20 +1,14 @@
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import React, { useState } from 'react'
-import { useInView } from 'react-intersection-observer';
 import { motion } from "framer-motion";
 
 const FaqItem = ({ question, answer, index }: { question: string; answer: string, index:number }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  });
-
   return (
     <motion.div
                 key={index}
-                ref={ref}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.5 }}
               >
     <div className="bg-gradient-to-br from-surface-light to-surface-dark rounded-2xl border border-primary/10 overflow-hidden">

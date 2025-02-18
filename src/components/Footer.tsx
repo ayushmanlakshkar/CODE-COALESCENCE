@@ -1,4 +1,4 @@
-import { Code2, Instagram, Phone } from "lucide-react";
+import { Instagram, Phone } from "lucide-react";
 import React from "react";
 import logo from '../assets/logo2.png'
 function Footer() {

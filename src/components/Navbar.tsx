@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
+const problemStatementsLink = import.meta.env.VITE_PROBLEM_STATEMENTS
 function Navbar({
   scrolled,
   docsLink,
@@ -20,7 +20,7 @@ function Navbar({
     if (target) {
       console.log(target);
       target.scrollIntoView({ behavior: "smooth", block: "start" });
-      if(window.innerWidth < 768) {
+      if (window.innerWidth < 768) {
         setTimeout(() => {
           window.scrollBy({ top: -45, behavior: "smooth" });
         }, 800);
@@ -31,9 +31,8 @@ function Navbar({
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-surface-dark/80 backdrop-blur-md py-1" : "bg-transparent py-4"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-surface-dark/80 backdrop-blur-md py-1" : "bg-transparent py-4"
+        }`}
     >
       <div className="max-w-[100vw] mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
@@ -45,16 +44,30 @@ function Navbar({
         {/* Desktop Menu */}
         <div className="hidden nav:flex items-center gap-8 font-bold">
           {["about", "timeline", "tracks", "guidelines", "FAQ"].map((item) => (
+            <div key={item} className="relative group">
+              <a
+                href={`#${item}`}
+                onClick={(e) => handleSmoothScroll(e, `#${item}`)}
+                className="hover:text-primary transition-colors"
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </a>
+              <div className="absolute left-0 bottom-0 h-0.5 bg-primary w-0 transition-all duration-300 ease-in-out group-hover:w-full"></div>
+            </div>
+          ))}
+          <div className="relative group">
             <a
-              key={item}
-              href={`#${item}`}
-              onClick={(e) => handleSmoothScroll(e, `#${item}`)}
+              href={problemStatementsLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-primary transition-colors"
             >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
+              Problem Statements
             </a>
-          ))}
+            <div className="absolute left-0 bottom-0 h-0.5 bg-primary w-0 transition-all duration-300 ease-in-out group-hover:w-full"></div>
+          </div>
         </div>
+
 
         {/* Register Button */}
         <a
@@ -95,6 +108,15 @@ function Navbar({
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </a>
             ))}
+            <a
+              key='problem_statements'
+              href={problemStatementsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              Problem Statements
+            </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
