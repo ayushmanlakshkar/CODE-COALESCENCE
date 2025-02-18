@@ -1,5 +1,5 @@
 // import { Clock } from "lucide-react";
-import timeline from '../assets/timeline.png'
+import timeline from '../assets/timeline.avif'
 
 export const TimelineSection = () => (
     <section id="timeline" className="pt-16 md:pt-32 relative">

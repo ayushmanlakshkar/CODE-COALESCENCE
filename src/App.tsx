@@ -10,7 +10,7 @@ import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
 import { TimelineSection } from './components/TimelineSection';
 import Navbar from './components/Navbar';
-import background from './assets/background.png';
+import background from './assets/background.avif';
 import Guidelines from './components/Guidelines';
 const docsLink = import.meta.env.VITE_DOCS_LINK
 
