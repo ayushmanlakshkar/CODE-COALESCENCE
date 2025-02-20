@@ -23,3 +23,18 @@
     @apply bg-cyan-500/20 rounded-full hover:bg-cyan-500/30 transition-colors;
   }
 }
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 15s linear infinite;
+}
