@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import page1 from '../assets/page1.avif';
 import page2 from '../assets/page2.avif';
 import page3 from '../assets/page3.avif';
@@ -9,14 +9,6 @@ export const ShortlistedTeams = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [direction, setDirection] = useState('next');
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNextPage();
-    }, 5000); // Change page every 5 seconds
-
-    return () => clearInterval(interval);
-  }, []);
 
   const handleNextPage = () => {
     if (isAnimating) return;
@@ -38,7 +30,7 @@ export const ShortlistedTeams = () => {
     }, 500);
   };
 
-  const goToPage = (pageIndex: number) => {
+  const goToPage = (pageIndex:number) => {
     if (isAnimating) return;
     setDirection(pageIndex > currentPage ? 'next' : 'prev');
     setIsAnimating(true);
@@ -51,15 +43,15 @@ export const ShortlistedTeams = () => {
   return (
     <section id="shortlisted-teams" className="pt-16 md:pt-32 relative">
       <div className="w-full md:w-11/12 mx-auto justify-center flex flex-col items-center md:px-20 relative">
-        <div className="flex w-full justify-center items-center overflow-hidden relative">
-          <div 
+        <div className="flex w-full justify-center items-center overflow-hidden">
+          <button 
             onClick={handlePrevPage} 
-            className="absolute left-0 text-white text-4xl md:text-6xl z-20 hover:opacity-75 transition-opacity cursor-pointer"
+            className="text-white md:mx-7 text-4xl md:text-6xl z-20 hover:opacity-75 transition-opacity disabled:opacity-50"
             aria-label="Previous slide"
-            style={{ top: '50%', transform: 'translateY(-50%)' }}
+            disabled={isAnimating}
           >
             &#9664;
-          </div>
+          </button>
           
           <div className="relative w-full md:w-6/12">
             <img
@@ -75,29 +67,30 @@ export const ShortlistedTeams = () => {
             />
           </div>
           
-          <div 
+          <button 
             onClick={handleNextPage} 
-            className="absolute right-0 text-white text-4xl md:text-6xl z-20 hover:opacity-75 transition-opacity cursor-pointer"
+            className="text-white md:mx-7 text-4xl md:text-6xl z-20 hover:opacity-75 transition-opacity disabled:opacity-50"
             aria-label="Next slide"
-            style={{ top: '50%', transform: 'translateY(-50%)' }}
+            disabled={isAnimating}
           >
             &#9654;
-          </div>
+          </button>
         </div>
         
         {/* Carousel Indicators */}
         <div className="flex justify-center mt-8">
           {pages.map((_, index) => (
-            <div
+            <button
               key={index}
               onClick={() => goToPage(index)}
-              className={`h-3 w-3 mx-2 rounded-full transition-all duration-300 cursor-pointer ${
+              className={`h-3 w-3 mx-2 rounded-full transition-all duration-300 ${
                 currentPage === index 
                   ? 'bg-secondary scale-125' 
                   : 'bg-gray-400 hover:bg-gray-600'
               }`}
               aria-label={`Go to slide ${index + 1}`}
               aria-current={currentPage === index ? 'true' : 'false'}
+              disabled={isAnimating}
             />
           ))}
         </div>
