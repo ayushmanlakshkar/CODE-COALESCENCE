@@ -44,11 +44,18 @@ function HeroSection({ docsLink }: HeroSectionProps) {
                     className="text-lg md:text-2xl text-content mb-12 max-w-2xl mx-auto"
                 />
 
-                <div className="flex sm:hidden gap-4 justify-center">
+                {/* <div className="flex sm:hidden gap-4 justify-center">
                     <a href={docsLink}
                         className="group bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] relative">
                         <div className="absolute inset-0 bg-content/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                         Register Now
+                    </a>
+                </div> */}
+                <div className="flex sm:hidden gap-4 justify-center">
+                    <a href={`#${"shortlisted-teams"}`}
+                        className="group bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] relative">
+                        <div className="absolute inset-0 bg-content/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                        View Shorlisted Teams
                     </a>
                 </div>
                 {/* <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
