@@ -14,6 +14,7 @@ import background from "./assets/background.avif";
 import Guidelines from "./components/Guidelines";
 // import AnnouncementToast from "./components/AnnouncementToast";
 import ScrollingAnnouncement from "./components/ScrollingAnnouncement";
+import { ShortlistedTeams } from "./components/ShortlistedTeams";
 
 const docsLink = import.meta.env.VITE_DOCS_LINK;
 
@@ -102,13 +103,13 @@ function App() {
 
         {/* Stats Section */}
         <StatsSection />
-
+        
+        <ShortlistedTeams/>
         {/* About Section */}
         <AboutSection />
 
         {/* Tracks Section */}
         <TracksSection />
-
         {/* guidelines */}
         <Guidelines />
 
