@@ -70,13 +70,21 @@ function Navbar({
 
 
         {/* Register Button */}
-        <a
+        {/* <a
           href={docsLink}
           target="_blank"
           rel="noopener noreferrer"
           className="hidden nav:flex bg-gradient-to-r from-primary to-secondary hover:from-primary-light hover:to-secondary-light px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105"
         >
           Register Now
+        </a> */}
+
+<a
+          href={`#${"shortlisted-teams"}`}
+         
+          className="hidden nav:flex bg-gradient-to-r from-primary to-secondary hover:from-primary-light hover:to-secondary-light px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105"
+        >
+          Shorlisted Teams
         </a>
 
         {/* Hamburger Menu Button (Mobile) */}
@@ -117,13 +125,19 @@ function Navbar({
             >
               Problem Statements
             </a>
-            <a
+            {/* <a
               target="_blank"
               rel="noopener noreferrer"
               href={docsLink}
               className="bg-gradient-to-r from-primary to-secondary hover:from-primary-light hover:to-secondary-light px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105"
             >
               Register Now
+            </a> */}
+            <a
+              href={`#${"shortlisted-teams"}`}
+              className="bg-gradient-to-r from-primary to-secondary hover:from-primary-light hover:to-secondary-light px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105"
+            >
+              Shorlisted Teams
             </a>
           </motion.div>
         )}

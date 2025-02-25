@@ -30,7 +30,7 @@ export const ShortlistedTeams = () => {
     }, 500);
   };
 
-  const goToPage = (pageIndex) => {
+  const goToPage = (pageIndex:number) => {
     if (isAnimating) return;
     setDirection(pageIndex > currentPage ? 'next' : 'prev');
     setIsAnimating(true);
