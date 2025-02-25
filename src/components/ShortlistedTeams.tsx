@@ -1,98 +1,104 @@
-import React, { useState } from 'react';
-import page1 from '../assets/page1.avif';
-import page2 from '../assets/page2.avif';
-import page3 from '../assets/page3.avif';
-
-const pages = [page1, page2, page3];
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import team1 from "../assets/page1.avif";
+import team2 from "../assets/page2.avif";
+import team3 from "../assets/page3.avif";
+import { useRef, useState, useEffect } from "react";
 
 export const ShortlistedTeams = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [direction, setDirection] = useState('next');
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleNextPage = () => {
-    if (isAnimating) return;
-    setDirection('next');
-    setIsAnimating(true);
-    setTimeout(() => {
-      setCurrentPage((prevPage) => (prevPage + 1) % pages.length);
-      setIsAnimating(false);
-    }, 500);
-  };
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        left: 0, // Ensure the first image is visible on mount
+        behavior: "smooth",
+      });
+    }
+  }, []);
 
-  const handlePrevPage = () => {
-    if (isAnimating) return;
-    setDirection('prev');
-    setIsAnimating(true);
-    setTimeout(() => {
-      setCurrentPage((prevPage) => (prevPage - 1 + pages.length) % pages.length);
-      setIsAnimating(false);
-    }, 500);
-  };
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current;
+      const scrollAmount = clientWidth * 0.6; // Adjust scroll distance
 
-  const goToPage = (pageIndex) => {
-    if (isAnimating) return;
-    setDirection(pageIndex > currentPage ? 'next' : 'prev');
-    setIsAnimating(true);
-    setTimeout(() => {
-      setCurrentPage(pageIndex);
-      setIsAnimating(false);
-    }, 500);
+      let newScrollLeft =
+        direction === "left"
+          ? scrollLeft - scrollAmount
+          : scrollLeft + scrollAmount;
+
+      // Ensure we don't overshoot the edges
+      newScrollLeft = Math.max(
+        0,
+        Math.min(newScrollLeft, scrollWidth - clientWidth)
+      );
+
+      scrollRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth",
+      });
+
+      // Update active index based on position
+      setActiveIndex((prevIndex) =>
+        direction === "left"
+          ? Math.max(prevIndex - 1, 0)
+          : Math.min(prevIndex + 1, 2)
+      );
+    }
   };
 
   return (
-    <section id="shortlisted-teams" className="pt-16 md:pt-32 relative">
-      <div className="w-full md:w-11/12 mx-auto justify-center flex flex-col items-center md:px-20 relative">
-        <div className="flex w-full justify-center items-center overflow-hidden">
-          <button 
-            onClick={handlePrevPage} 
-            className="text-white md:mx-7 text-4xl md:text-6xl z-20 hover:opacity-75 transition-opacity disabled:opacity-50"
-            aria-label="Previous slide"
-            disabled={isAnimating}
+    <section
+      id="shortlisted-teams"
+      className="pt-16 md:pt-32 relative bg-black"
+    >
+      <div className="max-w-7xl mx-auto px-4 relative">
+        <div className="relative flex items-center justify-center">
+          {/* Left Arrow */}
+          <button
+            className="absolute left-4 z-10 bg-black/60 p-3 rounded-full hover:bg-black/80 transition-all"
+            onClick={() => scroll("left")}
+            disabled={activeIndex === 0} // Disable at first image
           >
-            &#9664;
+            <ChevronLeft className="w-8 h-8 text-white" />
           </button>
-          
-          <div className="relative w-full md:w-6/12">
-            <img
-              className={`w-full object-contain transition-all duration-500 ${
-                isAnimating 
-                  ? direction === 'next' 
-                    ? 'opacity-0 translate-x-full' 
-                    : 'opacity-0 -translate-x-full'
-                  : 'opacity-80 translate-x-0'
-              }`}
-              src={pages[currentPage]}
-              alt={`Page ${currentPage + 1}`}
-            />
+
+          {/* Scrollable Container */}
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-auto gap-6 px-12 py-4 scrollbar-hide scroll-smooth justify-center"
+          >
+            {[team1, team2, team3].map((team, index) => (
+              <div
+                key={index}
+                className={`min-w-[260px] md:min-w-[320px] relative transition-transform duration-500 ease-in-out 
+                  ${
+                    index === activeIndex
+                      ? "scale-[1.05] shadow-2xl z-10"
+                      : "scale-[0.9] opacity-70"
+                  }
+                `}
+                onClick={() => setActiveIndex(index)}
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-md border-2 border-transparent hover:border-primary transition-all duration-300">
+                  <img
+                    src={team}
+                    alt={`Team ${index + 1}`}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
-          
-          <button 
-            onClick={handleNextPage} 
-            className="text-white md:mx-7 text-4xl md:text-6xl z-20 hover:opacity-75 transition-opacity disabled:opacity-50"
-            aria-label="Next slide"
-            disabled={isAnimating}
+
+          {/* Right Arrow */}
+          <button
+            className="absolute right-4 z-10 bg-black/60 p-3 rounded-full hover:bg-black/80 transition-all"
+            onClick={() => scroll("right")}
+            disabled={activeIndex === 2} // Disable at last image
           >
-            &#9654;
+            <ChevronRight className="w-8 h-8 text-white" />
           </button>
-        </div>
-        
-        {/* Carousel Indicators */}
-        <div className="flex justify-center mt-8">
-          {pages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToPage(index)}
-              className={`h-3 w-3 mx-2 rounded-full transition-all duration-300 ${
-                currentPage === index 
-                  ? 'bg-secondary scale-125' 
-                  : 'bg-gray-400 hover:bg-gray-600'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-              aria-current={currentPage === index ? 'true' : 'false'}
-              disabled={isAnimating}
-            />
-          ))}
         </div>
       </div>
     </section>

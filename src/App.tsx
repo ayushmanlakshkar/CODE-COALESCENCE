@@ -103,10 +103,12 @@ function App() {
 
         {/* Stats Section */}
         <StatsSection />
-        
-        <ShortlistedTeams/>
+
         {/* About Section */}
         <AboutSection />
+
+        {/* ShortlistedTeams Section */}
+        <ShortlistedTeams />
 
         {/* Tracks Section */}
         <TracksSection />
